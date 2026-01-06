@@ -541,9 +541,7 @@ async function handleDocumentMessage(msg) {
             const inputYear = cleanParsedDate.getFullYear();
             const currentYear = today.getFullYear();
 
-            if (inputYear !== currentYear) {
-                dateError = `ປີທີ່ໃສ່ (${inputYear}) ບໍ່ແມ່ນປີປະຈຸບັນ`;
-            } else if (cleanParsedDate < today || cleanParsedDate > sevenDaysLater) {
+            if (cleanParsedDate < today || cleanParsedDate > sevenDaysLater) {
                 const d = cleanParsedDate.toLocaleDateString('en-GB');
                 dateError = `ວັນທີຢື່ນແຈ້ງລົດ (${d}) ຕ້ອງຢູ່ໃນໄລຍະ 7 ມື້ຂ້າງໜ້າ`;
             }
